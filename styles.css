@@ -1,0 +1,33 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: rgb(214, 208, 199);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.container {
+  box-sizing: content-box;
+  margin: 0 auto;
+  width: 480px;
+  display: flex;
+  flex-wrap: wrap;
+  border: 2px solid rgb(26, 29, 25);
+  border-radius: 20px;
+}
+
+.resolution-change {
+  display: block;
+  margin: 30px auto;
+  height: 60px;
+  width: 160px;
+  font-size: 20px;
+  background-color: gray;
+}
+
+.resolution-change:hover {
+  background-color: greenyellow;
+}
