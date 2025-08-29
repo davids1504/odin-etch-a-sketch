@@ -9,25 +9,40 @@ body {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
+h1 {
+  text-align: center;
+  margin: 12px auto;
+  font-size: 50px;
+  font-weight: bold;
+}
+
 .container {
   box-sizing: content-box;
   margin: 0 auto;
   width: 480px;
+  min-height: 480px;
   display: flex;
   flex-wrap: wrap;
   border: 2px solid rgb(26, 29, 25);
   border-radius: 20px;
 }
 
-.resolution-change {
-  display: block;
-  margin: 30px auto;
+.buttons {
+  display: flex;
+  justify-content: center;
+}
+
+.resolution-change-button,
+.random-colors-button {
+  display: inline-block;
+  margin: 20px;
   height: 60px;
   width: 160px;
   font-size: 20px;
   background-color: gray;
 }
 
-.resolution-change:hover {
-  background-color: greenyellow;
+.resolution-change-button:hover,
+.random-colors-button:hover {
+  background-color: greenyellow !important;
 }

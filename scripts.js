@@ -2,6 +2,7 @@ const gridContainer = document.querySelector(".container");
 
 let squaresInRow = 16;
 let containerWidth = parseInt(window.getComputedStyle(gridContainer).width.replace(/\D/g, ""));
+let isRandomColorOn = false;
 
 function createSquares() {
   gridContainer.innerHTML = "";
@@ -38,16 +39,23 @@ function createSquares() {
     });
 
     el.addEventListener("mouseout", () => {
-      el.style.backgroundColor = "green";
+      el.style.backgroundColor = isRandomColorOn
+        ? `rgb(${getRandomRGBValue()}, ${getRandomRGBValue()}, ${getRandomRGBValue()})`
+        : "green";
     });
   });
 }
 
 createSquares();
+
+function getRandomRGBValue() {
+  return Math.round(Math.random() * 257);
+}
+
 function changeResolution() {
-  const button = document.querySelector(".resolution-change");
+  const button = document.querySelector(".resolution-change-button");
   button.addEventListener("click", () => {
-    squaresInRow = parseInt(prompt("Enter the value: ", 16));
+    squaresInRow = parseInt(prompt("Number of squares per row (100 max): ", 16));
     if (squaresInRow > 100) {
       alert("100 is max value! Please enter a valid value.");
       return;
@@ -56,4 +64,13 @@ function changeResolution() {
   });
 }
 
+function toggleRandomColors() {
+  const button = document.querySelector(".random-colors-button");
+  button.addEventListener("click", () => {
+    isRandomColorOn = isRandomColorOn ? false : true;
+    button.style.backgroundColor = isRandomColorOn ? "greenyellow" : "gray";
+  });
+}
+
+toggleRandomColors();
 changeResolution();
